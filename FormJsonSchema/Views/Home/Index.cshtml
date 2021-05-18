@@ -1,0 +1,192 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<form class="form"></form>
+
+@section Scripts {
+    <script type="text/javascript">
+        $('form').jsonForm({
+            "schema": {
+                "tab_Personal": {
+                    "type": "array",
+                    "title": "Personal Information Form",
+                    "items": {
+                        "type": "object",
+                        "title": "Personal Information Form",
+                        "properties": {
+                            "FirstName": {
+                                "type": "string",
+                                "title": "First Name",
+                                "required": true
+                            },
+                            "LastName": {
+                                "type": "string",
+                                "title": "Last Name",
+                                "required": true
+                            },
+                            "DateOfBirth": {
+                                "type": "date",
+                                "title": "Date Of Birth",
+                                "required": true
+                            },
+                            "Gender": {
+                                "type": "string",
+                                "title": "Gender",
+                                "enum": ["Male", "Female"]
+                            }
+                        }
+                    }
+                },
+                "tab_Contact": {
+                    "type": "array",
+                    "title": "Contact Information Form",
+                    "items": {
+                        "type": "object",
+                        "title": "Contact Information Form",
+                        "properties": {
+                            "Address": {
+                                "type": "string",
+                                "title": "Address",
+                                "required": true
+                            },
+                            "City": {
+                                "type": "string",
+                                "title": "City",
+                                "required": true
+                            },
+                            "State": {
+                                "type": "string",
+                                "title": "State",
+                                "required": true
+                            }
+                        }
+                    }
+                },
+                "tab_Education": {
+                    "type": "array",
+                    "title": "Education Information Form",
+                    "items": {
+                        "type": "object",
+                        "title": "Education Information Form",
+                        "properties": {
+                            "HighSchoolName": {
+                                "type": "string",
+                                "title": "High School Name",
+                                "required": true
+                            },
+                            "UniversityName": {
+                                "type": "string",
+                                "title": "University Name",
+                                "required": true
+                            }
+                        }
+                    }
+                },
+                "actor_female": {
+                    "type": "string",
+                    "title": "Favorite Female Actor",
+                    "enum": [
+                        "Emily Blunt",
+                        "Julie Andrews",
+                        "Meryl Streep",
+                        "Helen Mirren"
+                    ]
+                },
+                "RadioButton": {
+                    "type": "string",
+                    "title": "Select One",
+                    "enum": ["Option 1", "Option 2", "Option 3"]
+                },
+                "RadioButton": {
+                    "type": "string",
+                    "title": "Select One",
+                    "enum": ["Option 1", "Option 2", "Option 3"]
+                },
+                "Checkbox": {
+                    "type": "string",
+                    "title": "Check All That Apply",
+                    "enum": ["Option 1", "Option 2", "Option 3"]
+                },
+                "Notes": {
+                    "type": "string",
+                    "title": "Notes"
+                }
+            },
+            "form": [
+                {
+                    "type": "fieldset",
+                    "items": [
+                        {
+                            "type": "tabs",
+                            "id": "navtabs",
+                            "items": [
+                                {
+                                    "type": "tab",
+                                    "title": "Personal",
+                                    "items": [
+                                        {
+                                            "key": "tab_Personal[]",
+                                            "activeClass": "btn-success",
+                                            "title": "Personal Information Form",
+                                            "valueInLegend": true
+                                        },
+                                        {
+                                            "key": "RadioButton",
+                                            "type": "radios",
+                                            "activeClass": "btn-success"
+                                        },
+                                        {
+                                            "key": "Checkbox",
+                                            "type": "checkboxes",
+                                            "activeClass": "btn-success"
+                                        },
+                                        {
+                                            "key": "Notes",
+                                            "type": "textarea"
+                                        },
+                                        {
+                                            "type": "submit",
+                                            "value": "Submit"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Contact",
+                                    "type": "tab",
+                                    "items": [
+                                        {
+                                            "key": "tab_Contact[]",
+                                            "activeClass": "btn-success",
+                                            "title": "Contact Information Form",
+                                            "valueInLegend": true
+                                        },
+                                        {
+                                            "type": "submit",
+                                            "value": "Submit"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Education",
+                                    "type": "tab",
+                                    "items": [
+                                        {
+                                            "key": "tab_Education[]",
+                                            "activeClass": "btn-success",
+                                            "title": "Education Information Form",
+                                            "valueInLegend": true
+                                        },
+                                        {
+                                            "type": "submit",
+                                            "value": "Submit"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        });
+    </script>
+}
