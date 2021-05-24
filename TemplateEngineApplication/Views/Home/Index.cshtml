@@ -701,9 +701,83 @@
             width: 200%;
             height: 200%;
         }
+
+        .input-group-addon {
+            padding: 6px 12px;
+            line-height: 1;
+            background-color: #eee;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .aside {
+            background-color: #1e1e2d !important;
+        }
+
+        .aside-menu .menu-nav > .menu-item > .menu-heading .menu-text, .aside-menu .menu-nav > .menu-item > .menu-link .menu-text {
+            color: #a2a3b7;
+        }
+
+        @@media (min-width: 992px) {
+            .header {
+                background-color: #ffffff;
+            }
+        }
+
+        @@media (min-width: 992px) {
+            .header .header-menu .menu-nav > .menu-item.menu-item-here > .menu-link, .header .header-menu .menu-nav > .menu-item.menu-item-active > .menu-link {
+                background-color: rgba(77, 89, 149, 0.06);
+            }
+        }
+
+        }
+
+        @@media (min-width: 992px) {
+            .header .header-menu .menu-nav > .menu-item > .menu-link {
+                border-radius: 4px;
+            }
+        }
+
+        @@media (min-width: 992px) {
+            .header-menu.header-menu-layout-default .menu-nav > .menu-item > .menu-link {
+                padding: 0.65rem 1.1rem;
+            }
+        }
+
+        @@media (min-width: 992px) {
+            .header .header-menu .menu-nav > .menu-item.menu-item-here > .menu-link .menu-text, .header .header-menu .menu-nav > .menu-item.menu-item-active > .menu-link .menu-text {
+                color: #3699FF;
+            }
+        }
+
+        @@media (min-width: 992px) {
+            .header .header-menu .menu-nav > .menu-item > .menu-link:hover {
+                background-color: rgba(77, 89, 149, 0.06) !important;
+            }
+        }
+
+        @@media (min-width: 992px) {
+            .header-fixed.subheader-fixed.subheader-enabled .wrapper {
+                padding-top: 0px;
+            }
+        }
+
+        @@media (min-width: 992px) {
+            .header-fixed.subheader-fixed.subheader-enabled .wrapper {
+                padding-top: 0px;
+            }
+        }
+
+        @@media (min-width: 992px) {
+            .header-fixed .wrapper {
+                padding-top: 0px;
+            }
+        }
+
+        .table-responsive {
+            width: 95%;
+        }
     </style>
-    @*<script type="text/javascript" charset="UTF-8" src="https://maps.google.com/maps-api-v3/api/js/44/14/common.js"></script>
-        <script type="text/javascript" charset="UTF-8" src="https://maps.google.com/maps-api-v3/api/js/44/14/util.js"></script>*@
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -790,31 +864,6 @@
                     <div id="kt_aside_menu" class="aside-menu my-4 scroll ps" data-menu-vertical="1" data-menu-scroll="1" data-menu-dropdown-timeout="500" style="height: 534px; overflow: hidden;">
                         <!--begin::Menu Nav-->
                         <ul class="menu-nav" id="ul_sidebar">
-
-                            @*<li class="menu-item" aria-haspopup="true">
-                                    <a href="https://prasunnandy.me/dev/nyu/index.html" class="menu-link">
-                                        <i class="menu-icon fas fa-map"></i>
-                                        <span class="menu-text">Demographic Data</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item" aria-haspopup="true">
-                                    <a href="https://prasunnandy.me/dev/nyu/employement.html" class="menu-link">
-                                        <i class="menu-icon fas fa-briefcase"></i>
-                                        <span class="menu-text">Employment Information</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item" aria-haspopup="true">
-                                    <a href="https://prasunnandy.me/dev/nyu/employer.html" class="menu-link">
-                                        <i class="menu-icon fas fa-building"></i>
-                                        <span class="menu-text">Employer Form</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item" aria-haspopup="true">
-                                    <a href="https://prasunnandy.me/dev/nyu/employees_grid.html" class="menu-link">
-                                        <i class="menu-icon fas fa-th-large"></i>
-                                        <span class="menu-text">Employees Grid </span>
-                                    </a>
-                                </li>*@
                         </ul>
                         <!--end::Menu Nav-->
                         <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 4px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div>
@@ -834,19 +883,119 @@
                         <div class="container" id="hd-container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="card card-custom hd-mt-4">
-                                        <form class="form"></form>
-                                        <!--<div class="card-header">
+                                    <div class="card card-custom hd-mt-4" id="divDemographicData">
+                                        <div class="card-header">
                                             <h3 class="card-title">
                                                 Demographic Data
                                             </h3>
-                                        </div>-->
-                                        <!--begin::Form-->
-                                        <!--<div class="card-body">
+                                        </div>
+                                        <div class="card-body">
                                             <p>Please complete the following form in its entirety</p>
                                             <p><span class="mr-10"><span class="hd-required">*</span> indicates a required filed</span> <span><i class="fas fa-info-circle text-site"></i> indicates a pending change (click to view change)</span></p>
-
-                                        </div>-->
+                                            <form class="form_DemographicData"></form>
+                                        </div>
+                                        <!--end::Form-->
+                                    </div>
+                                    <div class="card card-custom hd-mt-4" id="divEmploymentInformation">
+                                        <div class="card-header">
+                                            <h3 class="card-title">
+                                                Employement Information
+                                            </h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Please complete the following form in its entirety. Any monetary values should be whole numbers no more than eight digits long with no dollar signs, decimals, or commas.</p>
+                                            <p><span class="mr-10"><span class="hd-required">*</span> indicates a required filed</span> <span><i class="fas fa-info-circle text-site"></i> indicates a pending change (click to view change)</span></p>
+                                            <form class="form_EmployementInformation"></form>
+                                        </div>
+                                        <!--end::Form-->
+                                    </div>
+                                    <div class="card card-custom hd-mt-4" id="divEmployerForm">
+                                        <div class="card-header">
+                                            <h3 class="card-title">
+                                                Employer Form
+                                            </h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <p><span class="mr-10"><span class="hd-required">*</span> indicates a required filed</span></p>
+                                            <form class="form_EmployerForm"></form>
+                                        </div>
+                                        <!--end::Form-->
+                                    </div>
+                                    <div class="card card-custom hd-mt-4" id="divEmployerGrid">
+                                        <div class="card-header">
+                                            <h3 class="card-title">
+                                                Employer Grid
+                                            </h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>Click on the 'Add EMployer' button to submit information about your current employer.</p>
+                                            <p><span class="mr-10 hd-new-line"><i class="fas fa-info-circle text-site"></i> indicates a pending change (click to view change)</span> <span class="mr-10 hd-new-line"><i class="fas fa-asterisk text-warning"></i> indicates a new employer pending change</span> <span class=" hd-new-line"><i class="fas fa-times text-danger"></i> indicates an employer deletion pending chnage</span></p>
+                                            <form class="form_EmployerGrid">
+                                                <div class="form-group">
+                                                    <table class="table table-bordered table-striped table-responsive">
+                                                        <thead class="site-table-thead">
+                                                            <tr>
+                                                                <th></th>
+                                                                <th scope="col">Employer's Name</th>
+                                                                <th scope="col">Employer Type</th>
+                                                                <th scope="col">Employer Tax ID</th>
+                                                                <th scope="col">Employment Start Date</th>
+                                                                <th scope="col">Employment Hours Per Week</th>
+                                                                <th scope="col">How Often You are Paid</th>
+                                                                <th scope="col">Annual Gross Salary (2021)</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <label class="checkbox checkbox-site">
+                                                                        <input type="checkbox" name="Checkboxes12">
+                                                                        <span></span>
+                                                                    </label>
+                                                                </td>
+                                                                <th scope="row">Kristof Reggers</th>
+                                                                <td>Clark</td>
+                                                                <td>24324242</td>
+                                                                <td>2019-05-25</td>
+                                                                <td>35</td>
+                                                                <td>Monthly</td>
+                                                                <td>48000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <label class="checkbox checkbox-site">
+                                                                        <input type="checkbox" name="Checkboxes12">
+                                                                        <span></span>
+                                                                    </label>
+                                                                </td>
+                                                                <th scope="row">Kristof Reggers</th>
+                                                                <td>Clark</td>
+                                                                <td>24324242</td>
+                                                                <td>2019-05-25</td>
+                                                                <td>35</td>
+                                                                <td>Monthly</td>
+                                                                <td>48000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <label class="checkbox checkbox-site">
+                                                                        <input type="checkbox" name="Checkboxes12">
+                                                                        <span></span>
+                                                                    </label>
+                                                                </td>
+                                                                <th scope="row">Kristof Reggers</th>
+                                                                <td>Clark</td>
+                                                                <td>24324242</td>
+                                                                <td>2019-05-25</td>
+                                                                <td>35</td>
+                                                                <td>Monthly</td>
+                                                                <td>48000</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </form>
+                                        </div>
                                         <!--end::Form-->
                                     </div>
                                 </div>
@@ -918,307 +1067,96 @@
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="~/lib/jsonform/bs-jsonform.js"></script>
+    @*<script src="~/lib/jsonform/bs-jsonform.js"></script>*@
+    <script src="~/lib/under-score/underscore-min.js"></script>
+    <script src="~/lib/jsonform/jsonform.js"></script>
     <!--end::Body-->
     <svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg>
     <script type="text/javascript">
-
-        var formJson = {
-            "schema": {
-                "Screens": [
-                    {
-                        "navTitle": "Demographic Data",
-                        "name": "DemographicData",
-                    },
-                    {
-                        "navTitle": "Employment Information",
-                        "name": "EmploymentInformation",
-                    },
-                    {
-                        "navTitle": "Employer Form",
-                        "name": "EmployerForm",
-                    },
-                    {
-                        "navTitle": "Employees Grid",
-                        "name": "EmployeesGrid",
-                    }
-                ],
-                "form_DemographicData": {
-                    fields: [
-                        {
-                            id: "label1",
-                            name: "label",
-                            type: "field",
-                            "readonly": true,
-                        },
-                        {
-                            id: "firstName",
-                            name: "First Name",
-                            type: "field",
-                            field: {
-                                type: "text",
-                                placeholder: "First Name"
-                            }
-                        },
-                        {
-                            id: "middleName",
-                            name: "Middle Name",
-                            type: "field",
-                            field: {
-                                type: "text",
-                                placeholder: "Middle Name"
-                            }
-                        },
-                        {
-                            id: "lastName",
-                            name: "Last Name",
-                            type: "field",
-                            field: {
-                                type: "text",
-                                placeholder: "Last Name"
-                            }
-                        },
-                        {
-                            id: "gender",
-                            name: "Gender",
-                            type: "field",
-                            field: {
-                                type: "radio",
-                                default_value: "Male",
-                                options: ["Male", "Female", "Trans", "Other"],
-                                width: "6"
-                            }
-                        }, {
-                            id: "ssn",
-                            name: "SSN",
-                            type: "field",
-                            field: {
-                                "type": "list",
-                                "helptext": "XXX453453",
-                                "readonly": true,
-                                "required": false
-                            }
-                        }
-                    ]
-                },
-                "form_EmploymentInformation": {
-                    fields: [
-                        {
-                            id: "firstName",
-                            name: "Info First Name",
-                            type: "field",
-                            field: {
-                                type: "text",
-                                placeholder: "First Name"
-                            }
-                        },
-                        {
-                            id: "middleName",
-                            name: "Middle Name",
-                            type: "field",
-                            field: {
-                                type: "text",
-                                placeholder: "Middle Name"
-                            }
-                        },
-                        {
-                            id: "lastName",
-                            name: "Last Name",
-                            type: "field",
-                            field: {
-                                type: "text",
-                                placeholder: "Last Name"
-                            }
-                        },
-                        {
-                            id: "gender",
-                            name: "Gender",
-                            type: "field",
-                            field: {
-                                type: "radio",
-                                default_value: "Male",
-                                options: ["Male", "Female", "Trans", "Other"],
-                                width: "6"
-                            }
-                        }, {
-                            id: "ssn",
-                            name: "SSN",
-                            type: "field",
-                            field: {
-                                "type": "list",
-                                "helptext": "XXX453453",
-                                "readonly": true,
-                                "required": false
-                            }
-                        }
-                    ]
-                },
-                "form_EmployerForm": {
-                    fields: [
-                        {
-                            id: "firstName",
-                            name: "Employer First Name",
-                            type: "field",
-                            field: {
-                                type: "text",
-                                placeholder: "First Name"
-                            }
-                        },
-                        {
-                            id: "middleName",
-                            name: "Middle Name",
-                            type: "field",
-                            field: {
-                                type: "text",
-                                placeholder: "Middle Name"
-                            }
-                        },
-                        {
-                            id: "lastName",
-                            name: "Last Name",
-                            type: "field",
-                            field: {
-                                type: "text",
-                                placeholder: "Last Name"
-                            }
-                        },
-                        {
-                            id: "gender",
-                            name: "Gender",
-                            type: "field",
-                            field: {
-                                type: "radio",
-                                default_value: "Male",
-                                options: ["Male", "Female", "Trans", "Other"],
-                                width: "6"
-                            }
-                        }, {
-                            id: "ssn",
-                            name: "SSN",
-                            type: "field",
-                            field: {
-                                "type": "list",
-                                "helptext": "XXX453453",
-                                "readonly": true,
-                                "required": false
-                            }
-                        }
-                    ]
-                },
-                "form_EmployeesGrid": {
-                    fields: [
-                        {
-                            id: "firstName",
-                            name: "Grid First Name",
-                            type: "field",
-                            field: {
-                                type: "text",
-                                placeholder: "First Name"
-                            }
-                        },
-                        {
-                            id: "middleName",
-                            name: "Middle Name",
-                            type: "field",
-                            field: {
-                                type: "text",
-                                placeholder: "Middle Name"
-                            }
-                        },
-                        {
-                            id: "lastName",
-                            name: "Last Name",
-                            type: "field",
-                            field: {
-                                type: "text",
-                                placeholder: "Last Name"
-                            }
-                        },
-                        {
-                            id: "gender",
-                            name: "Gender",
-                            type: "field",
-                            field: {
-                                type: "radio",
-                                default_value: "Male",
-                                options: ["Male", "Female", "Trans", "Other"],
-                                width: "6"
-                            }
-                        }, {
-                            id: "ssn",
-                            name: "SSN",
-                            type: "field",
-                            field: {
-                                "type": "list",
-                                "helptext": "XXX453453",
-                                "readonly": true,
-                                "required": false
-                            }
-                        }
-                    ]
-                }
-            }
-        };
         $(document).ready(function () {
-            if (formJson != undefined && formJson != "") {
-                ToggleSection('DemographicData');
-                //window.jsonForm.registerSubmit(Form1Handler, "Form1")
-
-                //function Form1Handler(valid, data) {
-                //    if (valid) {
-                //        $("#Form1Data").text(JSON.stringify(data, null, 2))
-                //    } else {
-                //        $("#Form1Data").text("Form is NOT VALID. Did you fill out all fields?")
-                //    }
-                //}
-
-                var screenArray = formJson.schema.Screens;
-                var sidebar = $("#ul_sidebar");
-                var html = "";
-                $(screenArray).each(function (index) {
-                    var functionName = "ToggleSection(" + $(this)[0].name + ")";
-                    html += "<li class='menu-item'>";
-                    html += "<a href='javascript:void(0);' onclick='" + functionName + "' class='menu-link'>";
-                    html += "<i class='menu-icon fas fa-th-large'></i>";
-                    html += "<span class='menu-text'>" + $(this)[0].navTitle + "</span>";
-                    html += "</a>";
-                    html += "</li>";
-                    //$('.menu-link').click(function () {
-                    //    alert('hello from binded function call');
-                    //    //do stuff here...
-                    //});
-                });
-
-                sidebar.html(html);
-
-                //var field = form.formDesc.schema.properties.tab_Personal;
-                //var payload = {
-                //    "hide_validation": false,
-                //    "button_orientation": "left",
-                //    field
-                //}
-                //window.jsonForm.create(".form", payload, "form")
-
-
-            }
+            GetJsonDataAndAddForm();
         });
-        function ToggleSection(tabName) {
-            debugger;
-            if (tabName == 'DemographicData') {
-                fields = formJson.schema.form_DemographicData;
-            }
-            else if (tabName == 'EmploymentInformation') {
-                fields = formJson.schema.form_EmploymentInformation;
-            }
-            else if (tabName == 'EmployerForm') {
-                fields = formJson.schema.form_EmployerForm;
-            }
-            else {
-                fields = formJson.schema.form_EmployeesGrid;
-            }
-            window.jsonForm = new JsonForm()
-            window.jsonForm.create(".form", fields, "Form1")
+
+        function GetJsonDataAndAddForm() {
+            fetch(`Home/GetJsonFile`)
+                .then(response => response.json())
+                .then(form => {
+                    if (form != undefined && form != "") {
+                        const jsonform = JSON.parse(form.file);
+                        let form_demographticdata = JSON.parse(form.file);
+                        let form_EmployementInformation = JSON.parse(form.file);
+                        let form_EmployerForm = JSON.parse(form.file);
+                        let form_EmployerGrid = JSON.parse(form.file);
+
+                        var demographticdata = RemoveOtherForm(form_demographticdata.form, "DemographicData");
+                        var employementInformation = RemoveOtherForm(form_EmployementInformation.form, "EmployementInformation");
+                        var employerForm = RemoveOtherForm(form_EmployerForm.form, "EmployerForm");
+                        var employerGrid = RemoveOtherForm(form_EmployerGrid.form, "EmployerGrid");
+
+                        form_demographticdata.form = demographticdata;``
+                        form_EmployementInformation.form = employementInformation;
+                        form_EmployerForm.form = employerForm;
+                        form_EmployerGrid.form = employerGrid;
+
+                        $('.form_DemographicData').jsonForm(form_demographticdata);
+                        $('.form_EmployementInformation').jsonForm(form_EmployementInformation);
+                        $('.form_EmployerForm').jsonForm(form_EmployerForm);
+                        $('.form_EmployerGrid').jsonForm(form_EmployerGrid);
+
+                        var screenArray = jsonform.schema.Screens;
+                        var sidebar = $("#ul_sidebar");
+                        var html = "";
+                        $(screenArray).each(function (index) {
+                            html += "<li class='menu-item'>";
+                            html += "<a id='" + $(this)[0].name + "' class='menu-link'>";
+                            html += "<i class='menu-icon fas fa-th-large'></i>";
+                            html += "<span class='menu-text'>" + $(this)[0].navTitle + "</span>";
+                            html += "</a>";
+                            html += "</li>";
+
+                        });
+
+                        sidebar.html(html);
+                    }
+                    ShowForms();
+                })
+                .catch(error => console.error('Unable to get item.', error));
         }
+        function ShowForms() {
+            $("#divDemographicData").show();
+            $("#divEmploymentInformation").hide();
+            $("#divEmployerForm").hide();
+            $("#divEmployerGrid").hide();
+
+            $("#EmploymentInformation").click(function () {
+                $("#divDemographicData").hide();
+                $("#divEmploymentInformation").show();
+                $("#divEmployerForm").hide();
+                $("#divEmployerGrid").hide();
+            });
+            $("#DemographicData").click(function () {
+                $("#divDemographicData").show();
+                $("#divEmploymentInformation").hide();
+                $("#divEmployerForm").hide();
+                $("#divEmployerGrid").hide();
+            });
+            $("#EmployerForm").click(function () {
+                $("#divEmployerForm").show();
+                $("#divDemographicData").hide();
+                $("#divEmploymentInformation").hide();
+                $("#divEmployerGrid").hide();
+            });
+            $("#EmployeesGrid").click(function () {
+                $("#divEmployerGrid").show();
+                $("#divDemographicData").hide();
+                $("#divEmploymentInformation").hide();
+                $("#divEmployerForm").hide();
+            });
+        }
+        function RemoveOtherForm(mainform, value) {
+            return mainform.filter(ele => ele.id == value);
+        }
+
     </script>
 
 </body>

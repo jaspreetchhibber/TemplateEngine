@@ -1,0 +1,498 @@
+{
+  "schema": {
+    "Screens": [
+      {
+        "navTitle": "Demographic Data",
+        "name": "DemographicData"
+      },
+      {
+        "navTitle": "Employment Information",
+        "name": "EmploymentInformation"
+      },
+      {
+        "navTitle": "Employer Form",
+        "name": "EmployerForm"
+      },
+      {
+        "navTitle": "Employees Grid",
+        "name": "EmployeesGrid"
+      }
+    ],
+    "Input": {
+      "type": "string"
+    },
+    "Gender": {
+      "type": "string",
+      "title": "Gender",
+      "enum": [ "Male", "Female", "Other", "Trans" ]
+    },
+    "YearofGraduation": {
+      "type": "string",
+      "title": "Year of Graduation",
+      "enum": [ "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020" ]
+    },
+    "IsPartnerLRAPParticipant": {
+      "type": "string",
+      "title": "title",
+      "enum": [ "Yes", "No" ]
+    },
+    "Country": {
+      "type": "string",
+      "title": "Country",
+      "enum": [ "Bangladesh", "India", "United States" ]
+    },
+    "Address1": {
+      "type": "string",
+      "enum": [ "New York", "Florida", "Texas" ]
+    },
+    "ScholarshipProgram": {
+      "type": "string",
+      "enum": [ "AnBryce Scholarship", "Furman Academic Scholarship", "Furman Public Policy Scholarship", "Institute for International Law and Justice Scholarship", "Latinx Rights Scholarship", "Leadership Program in Law and Business Scholarship", "Root-Tilden-Kern Public Interest Scholarship", "Sinsheimer Service Scholarship", "None of the above" ]
+    },
+    "EmployementOption": {
+      "title": "Please choose one of the following that best describes your employment prior to this application",
+      "type": "string",
+      "enum": [ "I am a first time applicant. I have been employed in an LRAP eligible position since graduating from NYU School of Law.", "I am a first time applicant. I have been employed in non-LRAP eligible employment (typically a private firm) since graduating from NYU School of Law.", "I am continuing/returning participant. I have been employed in an LRAP eligible position since graduating from NYU School of Law.", "I am continuing/returning participant. I have previously submitted the Non-LRAP Eligible Employment Form and have remained in LRAP eligible employment since my previous submission.", "I am continuing/returning participant. I am renewing my application to earn forgiveness and do not anticipate being eligible for LRAP benefits." ]
+    },
+    "EmployedByMoreThanOneEmployer": {
+      "title": "Will you be employed by more than one employer at the same time during teh program year?",
+      "type": "string",
+      "enum": [ "Yes", "No" ]
+    },
+    "AnticipateInRepaymentOfEducationalLoans": {
+      "title": "Do you anticipate receiving any assistance in the repayment of educational loans from an organization other than NYU? (Please note: if yes, you will be asked to provide additional documentation describing these benefits)",
+      "type": "string",
+      "enum": [ "Yes", "No" ]
+    },
+    "TypeOfAssistance": {
+      "title": "Type of assistance",
+      "type": "string",
+      "enum": [ "Employer", "State", "Federal", "Non-Profit", "Other" ]
+    },
+    "AnticipateAdditionalIncome": {
+      "title": "Do you anticipate any additional income from employment not listed on this application?",
+      "type": "string",
+      "enum": [ "Yes", "No" ]
+    },
+    "EmployerType": {
+      "title": "Employer Type",
+      "type": "string",
+      "enum": [ "Type 1", "Type 2", "Type 3" ]
+    },
+    "AreYouPaid": {
+      "title": "How Often Are You Paid",
+      "type": "string",
+      "enum": [ "Monthly", "Half-Yearly", "Yearly" ]
+    }
+  },
+  "form": [
+    {
+      "type": "fieldset",
+      "id": "DemographicData",
+      "items": [
+        {
+          "key": "Input",
+          "title": "First Name",
+          "htmlClass": "form-group col-md-4",
+          "fieldHtmlClass": "form-control",
+          "htmlMetaData": {
+            "style": "display:inline-block"
+          }
+        },
+        {
+          "key": "Input",
+          "title": "Middle Name",
+          "htmlClass": "col-md-4",
+          "fieldHtmlClass": "form-control",
+          "htmlMetaData": {
+            "style": "display:inline-block"
+          }
+        },
+        {
+          "key": "Input",
+          "title": "Last Name",
+          "htmlClass": "col-md-4",
+          "fieldHtmlClass": "form-control",
+          "htmlMetaData": {
+            "style": "display:inline-block"
+          }
+        },
+        {
+          "key": "Gender",
+          "type": "radios",
+          "activeClass": "btn-success"
+        },
+        {
+          "key": "Input",
+          "title": "SSN",
+          "default": "XXX453453",
+          "htmlClass": "col-md-4",
+          "fieldHtmlClass": "form-control"
+        },
+        {
+          "key": "Input",
+          "title": "NYU ID",
+          "default": "12345678",
+          "htmlClass": "col-md-4",
+          "fieldHtmlClass": "form-control"
+        },
+        {
+          "key": "YearofGraduation",
+          "title": "Year of Graduation",
+          "htmlClass": "col-md-4",
+          "fieldHtmlClass": "form-control"
+        },
+        {
+          "key": "Input",
+          "title": "Spouse's Domestic Partner's First Name",
+          "htmlClass": "form-group col-md-4",
+          "fieldHtmlClass": "form-control",
+          "htmlMetaData": {
+            "style": "display:inline-block"
+          }
+        },
+        {
+          "key": "Input",
+          "title": "Middle Name(Optional)",
+          "htmlClass": "col-md-4",
+          "fieldHtmlClass": "form-control",
+          "htmlMetaData": {
+            "style": "display:inline-block"
+          }
+        },
+        {
+          "key": "Input",
+          "title": "Last Name",
+          "htmlClass": "col-md-4",
+          "fieldHtmlClass": "form-control",
+          "htmlMetaData": {
+            "style": "display:inline-block"
+          }
+        },
+        {
+          "key": "IsPartnerLRAPParticipant",
+          "type": "radios",
+          "title": "Is your Spouse/Domestic Partner also an LRAP Participant?",
+          "activeClass": "btn-success"
+        },
+        {
+          "key": "Input",
+          "title": "Number of Dependencies",
+          "htmlClass": "col-md-4",
+          "fieldHtmlClass": "form-control"
+        },
+        {
+          "key": "Country",
+          "htmlClass": "col-md-4",
+          "fieldHtmlClass": "form-control"
+        },
+        {
+          "key": "Input",
+          "title": "Address 1",
+          "htmlClass": "col-md-6",
+          "fieldHtmlClass": "form-control",
+          "htmlMetaData": {
+            "style": "display:inline-block"
+          }
+        },
+        {
+          "key": "Input",
+          "title": "Address 2 (if applicable)",
+          "htmlClass": "col-md-6",
+          "fieldHtmlClass": "form-control",
+          "htmlMetaData": {
+            "style": "display:inline-block"
+          }
+        },
+        {
+          "key": "Input",
+          "title": "City",
+          "htmlClass": "col-md-4",
+          "fieldHtmlClass": "form-control",
+          "htmlMetaData": {
+            "style": "display:inline-block"
+          }
+        },
+        {
+          "key": "Address1",
+          "title": "Address 1",
+          "htmlClass": "col-md-4",
+          "fieldHtmlClass": "form-control",
+          "htmlMetaData": {
+            "style": "display:inline-block"
+          }
+        },
+        {
+          "key": "Input",
+          "title": "Zip/ Postal Code",
+          "htmlClass": "col-md-4",
+          "fieldHtmlClass": "form-control",
+          "htmlMetaData": {
+            "style": "display:inline-block"
+          }
+        },
+        {
+          "key": "Country",
+          "title": "County of Citizen",
+          "htmlClass": "col-md-4",
+          "fieldHtmlClass": "form-control"
+        },
+        {
+          "key": "Input",
+          "title": "Primary Email",
+          "htmlClass": "col-md-6 form-group",
+          "fieldHtmlClass": "form-control",
+          "htmlMetaData": {
+            "style": "display:inline-block"
+          }
+        },
+        {
+          "key": "Input",
+          "title": "Secondary Email",
+          "htmlClass": "col-md-6 form-group",
+          "fieldHtmlClass": "form-control",
+          "htmlMetaData": {
+            "style": "display:inline-block"
+          }
+        },
+        {
+          "key": "Input",
+          "title": "Home",
+          "htmlClass": "col-md-4 form-group",
+          "fieldHtmlClass": "form-control",
+          "htmlMetaData": {
+            "style": "display:inline-block"
+          }
+        },
+        {
+          "key": "Input",
+          "title": "Mobile",
+          "htmlClass": "col-md-4 form-group",
+          "fieldHtmlClass": "form-control",
+          "htmlMetaData": {
+            "style": "display:inline-block"
+          }
+        },
+        {
+          "key": "Input",
+          "title": "Fax(Optional)",
+          "htmlClass": "col-md-4 form-group",
+          "fieldHtmlClass": "form-control",
+          "htmlMetaData": {
+            "style": "display:inline-block"
+          }
+        },
+        {
+          "key": "ScholarshipProgram",
+          "type": "radios",
+          "activeClass": "btn-success",
+          "title": "I was the recipient of the following names scholarship program during my tenure at NYU School of Law"
+        }
+      ]
+    },
+    {
+      "type": "fieldset",
+      "id": "EmployementInformation",
+      "items": [
+        {
+          "key": "EmployementOption",
+          "type": "radios",
+          "activeClass": "btn-success"
+        },
+        {
+          "key": "EmployedByMoreThanOneEmployer",
+          "type": "radios",
+          "activeClass": "btn-success"
+        },
+        {
+          "key": "Input",
+          "title": "Multiple Employers Explanation/Comments",
+          "type": "textarea",
+          "htmlClass": "form-group",
+          "fieldHtmlClass": "form-control"
+        },
+        {
+          "key": "AnticipateInRepaymentOfEducationalLoans",
+          "type": "radios",
+          "activeClass": "btn-success"
+        },
+        {
+          "key": "Input",
+          "title": "Source of assistance (Name of Organization)",
+          "htmlClass": "form-group",
+          "fieldHtmlClass": "form-control"
+        },
+        {
+          "key": "TypeOfAssistance",
+          "type": "radios",
+          "activeClass": "btn-success"
+        },
+        {
+          "key": "Input",
+          "title": "Anticipated amount of assistance",
+          "prepend": "$",
+          "append": ".00",
+          "fieldHtmlClass": "input-xxlarge"
+        },
+        {
+          "key": "Input",
+          "title": "Comments or Additional Information",
+          "type": "textarea",
+          "htmlClass": "form-group",
+          "fieldHtmlClass": "form-control"
+        },
+        {
+          "key": "AnticipateAdditionalIncome",
+          "type": "radios",
+          "activeClass": "btn-success"
+        },
+        {
+          "key": "Input",
+          "title": "Other Income Explanation/Comments",
+          "type": "textarea",
+          "htmlClass": "form-group",
+          "fieldHtmlClass": "form-control"
+        }
+      ]
+    },
+    {
+      "type": "fieldset",
+      "id": "EmployerForm",
+      "items": [
+        {
+          "key": "Input",
+          "title": "Employer ID",
+          "htmlClass": "form-group col-md-4",
+          "fieldHtmlClass": "form-control"
+        },
+        {
+          "key": "Input",
+          "title": "Employer's Name1",
+          "htmlClass": "form-group col-md-6",
+          "fieldHtmlClass": "form-control",
+          "htmlMetaData": {
+            "style": "display:inline-block"
+          }
+        },
+        {
+          "key": "Input",
+          "title": "Name 2 ex (department/divisions/jurisdiction/project)",
+          "htmlClass": "form-group col-md-6",
+          "fieldHtmlClass": "form-control",
+          "htmlMetaData": {
+            "style": "display:inline-block"
+          }
+        },
+        {
+          "key": "Input",
+          "title": "Title/Position",
+          "htmlClass": "form-group col-md-6",
+          "fieldHtmlClass": "form-control"
+        },
+        {
+          "key": "Country",
+          "htmlClass": "col-md-6",
+          "fieldHtmlClass": "form-control"
+        },
+        {
+          "key": "Input",
+          "title": "Address 1",
+          "htmlClass": "col-md-6",
+          "fieldHtmlClass": "form-control",
+          "htmlMetaData": {
+            "style": "display:inline-block"
+          }
+        },
+        {
+          "key": "Input",
+          "title": "Address 2 (if applicable)",
+          "htmlClass": "col-md-6",
+          "fieldHtmlClass": "form-control",
+          "htmlMetaData": {
+            "style": "display:inline-block"
+          }
+        },
+        {
+          "key": "Input",
+          "title": "City",
+          "htmlClass": "col-md-4",
+          "fieldHtmlClass": "form-control",
+          "htmlMetaData": {
+            "style": "display:inline-block"
+          }
+        },
+        {
+          "key": "Address1",
+          "title": "Address 1",
+          "htmlClass": "col-md-4",
+          "fieldHtmlClass": "form-control",
+          "htmlMetaData": {
+            "style": "display:inline-block"
+          }
+        },
+        {
+          "key": "Input",
+          "title": "Zip/ Postal Code",
+          "htmlClass": "col-md-4",
+          "fieldHtmlClass": "form-control",
+          "htmlMetaData": {
+            "style": "display:inline-block"
+          }
+        },
+        {
+          "key": "Input",
+          "title": "Primary Phone",
+          "htmlClass": "col-md-4 form-group",
+          "fieldHtmlClass": "form-control",
+          "htmlMetaData": {
+            "style": "display:inline-block"
+          }
+        },
+        {
+          "key": "Input",
+          "title": "Fax(Optional)",
+          "htmlClass": "col-md-4 form-group",
+          "fieldHtmlClass": "form-control",
+          "htmlMetaData": {
+            "style": "display:inline-block"
+          }
+        },
+        {
+          "key": "EmployerType",
+          "htmlClass": "col-md-4",
+          "fieldHtmlClass": "form-control"
+        },
+        {
+          "key": "Input",
+          "title": "Employer Tax Identification Number",
+          "htmlClass": "col-md-4 form-group",
+          "fieldHtmlClass": "form-control"
+        },
+        {
+          "key": "Input",
+          "title": "Employment Start Date",
+          "htmlClass": "col-md-4 form-group",
+          "fieldHtmlClass": "form-control"
+        },
+        {
+          "key": "Input",
+          "title": "Employment Hours Per Week",
+          "htmlClass": "col-md-4 form-group",
+          "fieldHtmlClass": "form-control"
+        },
+        {
+          "key": "AreYouPaid",
+          "htmlClass": "col-md-4",
+          "fieldHtmlClass": "form-control"
+        },
+        {
+          "key": "Input",
+          "title": "Annual Gross Salary (2021)",
+          "prepend": "$",
+          "append": ".00",
+          "fieldHtmlClass": "form-control"
+        }
+      ]
+    }
+  ]
+}
