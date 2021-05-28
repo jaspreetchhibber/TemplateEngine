@@ -928,72 +928,9 @@
                                             </h3>
                                         </div>
                                         <div class="card-body">
-                                            <p>Click on the 'Add EMployer' button to submit information about your current employer.</p>
+                                            <p>Click on the 'Add Employer' button to submit information about your current employer.</p>
                                             <p><span class="mr-10 hd-new-line"><i class="fas fa-info-circle text-site"></i> indicates a pending change (click to view change)</span> <span class="mr-10 hd-new-line"><i class="fas fa-asterisk text-warning"></i> indicates a new employer pending change</span> <span class=" hd-new-line"><i class="fas fa-times text-danger"></i> indicates an employer deletion pending chnage</span></p>
                                             <form class="form_EmployerGrid">
-                                                <div class="form-group">
-                                                    <table class="table table-bordered table-striped table-responsive">
-                                                        <thead class="site-table-thead">
-                                                            <tr>
-                                                                <th></th>
-                                                                <th scope="col">Employer's Name</th>
-                                                                <th scope="col">Employer Type</th>
-                                                                <th scope="col">Employer Tax ID</th>
-                                                                <th scope="col">Employment Start Date</th>
-                                                                <th scope="col">Employment Hours Per Week</th>
-                                                                <th scope="col">How Often You are Paid</th>
-                                                                <th scope="col">Annual Gross Salary (2021)</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>
-                                                                    <label class="checkbox checkbox-site">
-                                                                        <input type="checkbox" name="Checkboxes12">
-                                                                        <span></span>
-                                                                    </label>
-                                                                </td>
-                                                                <th scope="row">Kristof Reggers</th>
-                                                                <td>Clark</td>
-                                                                <td>24324242</td>
-                                                                <td>2019-05-25</td>
-                                                                <td>35</td>
-                                                                <td>Monthly</td>
-                                                                <td>48000</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <label class="checkbox checkbox-site">
-                                                                        <input type="checkbox" name="Checkboxes12">
-                                                                        <span></span>
-                                                                    </label>
-                                                                </td>
-                                                                <th scope="row">Kristof Reggers</th>
-                                                                <td>Clark</td>
-                                                                <td>24324242</td>
-                                                                <td>2019-05-25</td>
-                                                                <td>35</td>
-                                                                <td>Monthly</td>
-                                                                <td>48000</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <label class="checkbox checkbox-site">
-                                                                        <input type="checkbox" name="Checkboxes12">
-                                                                        <span></span>
-                                                                    </label>
-                                                                </td>
-                                                                <th scope="row">Kristof Reggers</th>
-                                                                <td>Clark</td>
-                                                                <td>24324242</td>
-                                                                <td>2019-05-25</td>
-                                                                <td>35</td>
-                                                                <td>Monthly</td>
-                                                                <td>48000</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
                                             </form>
                                         </div>
                                         <!--end::Form-->
@@ -1093,10 +1030,12 @@
                         var employerForm = RemoveOtherForm(form_EmployerForm.form, "EmployerForm");
                         var employerGrid = RemoveOtherForm(form_EmployerGrid.form, "EmployerGrid");
 
-                        form_demographticdata.form = demographticdata;``
+                        form_demographticdata.form = demographticdata;
                         form_EmployementInformation.form = employementInformation;
                         form_EmployerForm.form = employerForm;
                         form_EmployerGrid.form = employerGrid;
+
+                        EmployerGrid(employerGrid);
 
                         $('.form_DemographicData').jsonForm(form_demographticdata);
                         $('.form_EmployementInformation').jsonForm(form_EmployementInformation);
@@ -1156,7 +1095,53 @@
         function RemoveOtherForm(mainform, value) {
             return mainform.filter(ele => ele.id == value);
         }
+        function EmployerGrid(employerGrid) {
+            if (employerGrid != null && employerGrid != undefined) {
+                if (employerGrid[0].items.length > 0) {
+                    var headers = employerGrid[0].items[0].headers;
+                    var rows = employerGrid[0].items[0].rows;
 
+                    JSONForm.fieldTypes['htmlsnippet'] = {
+                        template: `<div class="form-group">
+                                <table class="table table-bordered table-striped table-responsive">
+                                    <thead class="site-table-thead">
+                                        <tr>
+                                            <%=headers%>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <%=rows%>
+                                    </tbody>
+                                </table>
+                            </div>`,
+                        onBeforeRender: function (data, node) {
+                            if (headers != null && headers != undefined) {
+                                var headersHTML = "";
+                                var rowsHTML = "";
+                                if (headers.length > 0) {
+                                    $(headers).each(function (index) {
+                                        headersHTML += "<th scope='col'>" + headers[index] + "</th>";
+                                    });
+                                    data.headers = headersHTML;
+                                }
+                                if (rows != null && rows != undefined) {
+                                    if (rows.length > 0) {
+                                        $(rows).each(function (index) {
+                                            rowsHTML += "<tr>";
+                                            $(rows[index].row).each(function (index, item) {
+                                                rowsHTML += "<td>" + item + "</td>";
+                                            });
+                                            rowsHTML += "</tr>";
+                                        });
+                                        data.rows = rowsHTML;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     </script>
 
 </body>

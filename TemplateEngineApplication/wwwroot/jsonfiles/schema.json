@@ -493,6 +493,28 @@
           "fieldHtmlClass": "form-control"
         }
       ]
+    },
+    {
+      "type": "fieldset",
+      "id": "EmployerGrid",
+      "items": [
+        {
+          "type": "htmlsnippet",
+          "id": "tableEmployerGrid",
+          "headers": [ "", "Employer's Name", "Employer Type", "Employer Tax ID", "Employment Start Date", "Employment Hours Per Week", "How Often You are Paid", "Annual Gross Salary (2021)" ],
+          "rows": [
+            {
+              "row": [ "<input type='checkbox' class='checkbox'/>", "Kristof Reggers", "Clark", "24324242", "2019-05-25", "35", "Monthly", "48000" ]
+            },
+            {
+              "row": [ "<input type='checkbox' class='checkbox'/>", "Kristof Reggers", "Clark", "24324242", "2019-05-25", "35", "Monthly", "48000" ]
+            },
+            {
+              "row": [ "<input type='checkbox' class='checkbox'/>", "Kristof Reggers", "Clark", "24324242", "2019-05-25", "35", "Monthly", "48000" ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }
